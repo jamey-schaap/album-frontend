@@ -47,6 +47,6 @@ jobs:
 
     - name: Copy files to S3 bucket
       env:
-        AWS-S3-BUCKET-NAME: ${{ secrets.AWS_S3_BUCKET_NAME }}
+        AWS-S3-BUCKET-NAME: cnsd-react-app-923720185987
       run: aws s3 sync ./build s3://$AWS-S3-BUCKET-NAME
     
