@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, Grid } from "@material-ui/core";
+import { Box, Card, CardActionArea, Grid } from "@material-ui/core";
 import AlbumCard from "./AlbumCard";
 import useAlbums from "../hooks/useAlbums";
 import { Link } from "react-router-dom";

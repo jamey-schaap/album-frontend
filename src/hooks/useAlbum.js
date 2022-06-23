@@ -20,7 +20,7 @@ const useAlbum = () => {
       .then((apiResult) => {
         setAlbum(apiResult);
       });
-  }, []);
+  }, [id]);
 
   return album;
 };

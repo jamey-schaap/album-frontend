@@ -1,7 +1,5 @@
-import { Box, Button, Card, CardContent, TextField } from "@material-ui/core";
-import { useState } from "react";
+import { Button, Card, CardContent, TextField } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
-import { Navigate } from "react-router-dom";
 
 const AlbumForm = ({ album, onSubmit }) => {
   const { handleSubmit, control } = useForm({
