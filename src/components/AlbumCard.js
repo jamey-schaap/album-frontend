@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const AlbumCard = ({ id, name, artist, imageUrl }) => {
   return (
-    <Card>
+    <Card variant="outlined">
       <CardHeader>
         id={id} title={name} subheader={artist}
       </CardHeader>
       <CardMedia>
-        Arist={artist}
+        {name} by {artist} 
         <br />
         <Link to={`/album/${id}`}>
           <img

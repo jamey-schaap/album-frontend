@@ -1,3 +1,8 @@
+# Student
+Name: Jamey Schaap
+Student-number: 09500444
+Class: INF2G
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

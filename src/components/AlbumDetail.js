@@ -1,15 +1,17 @@
+import { Button, Card } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import AlbumCard from "./AlbumCard";
-import useAlbum from "../hooks/useAlbums";
+import useAlbum from "../hooks/useAlbum";
+import AlbumForm from "./AlbumForm";
 
 const AlbumDetail = () => {
   const album = useAlbum();
+
   return (
-    <div>
-      <Link to={`/album/`}></Link>
-      <AlbumCard {...album}/>
-    </div>
-  )
+    <Card>
+      <AlbumForm album={album} />
+      <Link to="/album/"><Button type="submit">Back</Button></Link>
+    </Card>
+  );
 };
 
 export default AlbumDetail;

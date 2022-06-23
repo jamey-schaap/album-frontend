@@ -5,12 +5,10 @@ const endpoint = `${process.env.REACT_APP_API_BASE}/album`;
 
 const useAlbum = () => {
   const [album, setAlbum] = useState([]);
-  const [id, setId] = useState([]);
-  setId(useParams());
+  let { id } = useParams();
 
   useEffect(() => {
     const request = fetch(`${endpoint}/${id}`);
-
     request
       .then((apiResponse) => {
         if (!apiResponse.ok) {
