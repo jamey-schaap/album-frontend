@@ -1,4 +1,5 @@
 import { Card, CardHeader, CardMedia } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const AlbumCard = ({ id, name, artist, imageUrl }) => {
   return (
@@ -7,9 +8,16 @@ const AlbumCard = ({ id, name, artist, imageUrl }) => {
         id={id} title={name} subheader={artist}
       </CardHeader>
       <CardMedia>
-        {imageUrl}
-        <p>Artist: {artist}</p>
-        <p>Album: {name}</p>
+        Arist={artist}
+        <br />
+        <Link to={`/album/${id}`}>
+          <img
+            src={imageUrl}
+            width={200}
+            height={200}
+            alt={`${name} of ${artist}`}
+          />
+        </Link>
       </CardMedia>
     </Card>
   );
