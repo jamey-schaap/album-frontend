@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const endpoint = `${process.env.REACT_APP_API_BASE}/api/album`;
+const endpoint = `${process.env.REACT_APP_API_BASE}/album`;
 
 const useAlbums = () => {
   const [albums, setAlbums] = useState([]);
@@ -9,17 +9,17 @@ const useAlbums = () => {
     const request = fetch(endpoint);
 
     request
-      .then((apiRepsone) => {
-        if (!apiRepsone.ok) {
-          console.error(apiRepsone.statusText);
+      .then((apiResponse) => {
+        if (!apiResponse.ok) {
+          console.error(apiResponse.statusText);
+          return;
         }
-
-        return apiRepsone.json();
+        return apiResponse.json();
       })
       .then((apiResult) => {
         setAlbums(apiResult);
       });
-  });
+  }, []);
 
   return albums;
 };

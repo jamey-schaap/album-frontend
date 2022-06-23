@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardMedia } from '@material-ui/core';
+import { Card, CardHeader, CardMedia } from "@material-ui/core";
 
 const AlbumCard = ({ id, name, artist, imageUrl }) => {
   return (
@@ -6,7 +6,11 @@ const AlbumCard = ({ id, name, artist, imageUrl }) => {
       <CardHeader>
         id={id} title={name} subheader={artist}
       </CardHeader>
-      <CardMedia>{imageUrl}</CardMedia>
+      <CardMedia>
+        {imageUrl}
+        <p>Artist: {artist}</p>
+        <p>Album: {name}</p>
+      </CardMedia>
     </Card>
   );
 };
