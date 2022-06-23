@@ -46,7 +46,5 @@ jobs:
         aws-region: us-east-1
 
     - name: Copy files to S3 bucket
-      env:
-        AWS-S3-BUCKET-NAME: cnsd-react-app-923720185987
-      run: aws s3 sync ./build s3://$AWS-S3-BUCKET-NAME
+      run: aws s3 sync ./build s3://cnsd-react-app-923720185987
     
