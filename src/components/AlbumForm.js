@@ -13,8 +13,7 @@ const AlbumForm = ({ album, onSubmit, onRemove }) => {
   });
 
   let eventHandler;
-  if (onSubmit && !onRemove)
-    eventHandler = onSubmit;
+  if (onSubmit && !onRemove) eventHandler = onSubmit;
   else if (!onSubmit && onRemove)
     eventHandler = onRemove;
 
@@ -22,7 +21,6 @@ const AlbumForm = ({ album, onSubmit, onRemove }) => {
     <form onSubmit={handleSubmit(eventHandler)}>
       <Card>
         <CardContent>
-          {/* <p>{album.name}</p> */}
           <Controller
             name="name"
             control={control}
