@@ -1,7 +1,7 @@
 import { Button, Card, CardContent, TextField } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 
-const AlbumForm = ({ album, onSubmit }) => {
+const AlbumForm = ({ album, onSubmit, onRemove }) => {
   const { handleSubmit, control } = useForm({
     defaultValues: album
       ? album
@@ -12,19 +12,26 @@ const AlbumForm = ({ album, onSubmit }) => {
         },
   });
 
+  let eventHandler;
+  if (onSubmit && !onRemove)
+    eventHandler = onSubmit;
+  else if (!onSubmit && onRemove)
+    eventHandler = onRemove;
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(eventHandler)}>
       <Card>
         <CardContent>
+          {/* <p>{album.name}</p> */}
           <Controller
             name="name"
             control={control}
             rules={{ required: true }}
-            render={({ album }) => (
+            render={({ field }) => (
               <TextField
                 label="Name"
                 variant="outlined"
-                {...album}
+                {...field}
                 margin="normal"
                 fullWidth
               />
@@ -35,11 +42,11 @@ const AlbumForm = ({ album, onSubmit }) => {
             name="artist"
             control={control}
             rules={{ required: true }}
-            render={({ album }) => (
+            render={({ field }) => (
               <TextField
                 label="Artist"
                 variant="outlined"
-                {...album}
+                {...field}
                 margin="normal"
                 fullWidth
               />
@@ -47,21 +54,22 @@ const AlbumForm = ({ album, onSubmit }) => {
             margin="normal"
           />
           <Controller
-            name="image url"
+            name="imageUrl"
             control={control}
             rules={{ required: true }}
-            render={({ album }) => (
+            render={({ field }) => (
               <TextField
                 label="Image URL"
                 variant="outlined"
-                {...album}
+                {...field}
                 margin="normal"
                 fullWidth
               />
             )}
             margin="normal"
           />
-          <Button type="submit">Save </Button>
+          {onSubmit && !onRemove && <Button type="submit">Save</Button>}
+          {!onSubmit && onRemove && <Button type="submit">Remove</Button>}
         </CardContent>
       </Card>
     </form>

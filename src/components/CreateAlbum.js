@@ -4,8 +4,6 @@ import AlbumForm from "./AlbumForm";
 const endpoint = `${process.env.REACT_APP_API_BASE}/album`;
 
 const handleSubmit = (newAlbum) => {
-  console.log(newAlbum);
-
   const request = fetch(endpoint, {
     method: "POST",
     body: JSON.stringify(newAlbum),

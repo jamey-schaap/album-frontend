@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 const endpoint = `${process.env.REACT_APP_API_BASE}/album`;
 
-const useAlbum = () => {
-  const [album, setAlbum] = useState([]);
-  let { id } = useParams();
+const useAlbum = (id) => {
+  const [album, setAlbum] = useState();
 
   useEffect(() => {
     const request = fetch(`${endpoint}/${id}`);
