@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, TextField } from "@material-ui/core";
+import { Button, Card, CardContent, Grid, TextField } from "@material-ui/core";
 import { useForm, Controller } from "react-hook-form";
 
 const AlbumForm = ({ album, onSubmit, onRemove }) => {
@@ -12,13 +12,8 @@ const AlbumForm = ({ album, onSubmit, onRemove }) => {
         },
   });
 
-  let eventHandler;
-  if (onSubmit && !onRemove) eventHandler = onSubmit;
-  else if (!onSubmit && onRemove)
-    eventHandler = onRemove;
-
   return (
-    <form onSubmit={handleSubmit(eventHandler)}>
+    <form>
       <Card>
         <CardContent>
           <Controller
@@ -66,8 +61,38 @@ const AlbumForm = ({ album, onSubmit, onRemove }) => {
             )}
             margin="normal"
           />
-          {onSubmit && !onRemove && <Button type="submit">Save</Button>}
-          {!onSubmit && onRemove && <Button type="submit">Remove</Button>}
+          <Grid container spacing={2} style={{ marginTop: "0.5vh" }}>
+            {onRemove && (
+              <Grid item>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  onClick={handleSubmit(onRemove)}
+                  style={{
+                    color: "#ff0000",
+                    borderColor: "#ff0000",
+                  }}
+                >
+                  Remove
+                </Button>
+              </Grid>
+            )}
+            {onSubmit && (
+              <Grid item>
+                <Button
+                  type="submit"
+                  variant="outlined"
+                  onClick={handleSubmit(onSubmit)}
+                  style={{
+                    color: "#00FF00",
+                    borderColor: "#00FF00",
+                  }}
+                >
+                  Save
+                </Button>
+              </Grid>
+            )}
+          </Grid>
         </CardContent>
       </Card>
     </form>

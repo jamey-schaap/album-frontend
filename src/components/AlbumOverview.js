@@ -15,6 +15,11 @@ const cardStyle = {
   },
 };
 
+const linkStyle = {
+  textDecoration: "none",
+  color: "black",
+};
+
 const AlbumOverview = () => {
   const albums = useAlbums();
 
@@ -29,7 +34,7 @@ const AlbumOverview = () => {
 
         <Grid item xs={10} sm={2} md={2}>
           <Card style={cardStyle.Card}>
-            <Link to="/new/" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/new/" style={linkStyle}>
               <CardActionArea style={cardStyle.Card}>
                 <CardHeader title={"+"} />
               </CardActionArea>

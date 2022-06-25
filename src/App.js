@@ -13,7 +13,6 @@ function App() {
           <Toolbar>
             <IconButton href="/">Album Frontend</IconButton>
             <IconButton href="/album">Album overview</IconButton>
-            <IconButton href="/new">Add new album</IconButton>
           </Toolbar>
         </AppBar>
 

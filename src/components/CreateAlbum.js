@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import AlbumForm from "./AlbumForm";
 
 const endpoint = `${process.env.REACT_APP_API_BASE}/album`;
