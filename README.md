@@ -1,7 +1,9 @@
 # Student
-Name: Jamey Schaap
-Student-number: 09500444
-Class: INF2G
+<p>
+Name: Jamey Schaap <br/>
+Student-number: 09500444 <br/>
+Class: INF2G <br/>
+</p>
 
 # Getting Started with Create React App
 
